@@ -26,6 +26,14 @@
       </div>
     </div>
 
+    <div class="stats-bar">
+      <div class="moves-container">
+        <span class="moves-label">Moves</span>
+        <span class="moves-count">0</span>
+      </div>
+      <button class="settings-button" aria-label="Settings">⚙️</button>
+    </div>
+
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
       <a class="restart-button">New Game</a>
@@ -70,12 +78,58 @@
       <div class="tile-container">
 
       </div>
+
+      <div class="particle-container">
+
+      </div>
     </div>
 
     <p class="game-explanation">
       <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
     </p>
     <hr>
+
+    <!-- Settings Panel -->
+    <div class="settings-overlay" id="settings-overlay">
+      <div class="settings-panel">
+        <div class="settings-header">
+          <h2>Settings</h2>
+          <button class="close-settings" aria-label="Close settings">✕</button>
+        </div>
+        <div class="settings-content">
+          <div class="setting-item">
+            <label for="theme-toggle">
+              <span class="setting-label">Dark Mode</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="theme-toggle" class="toggle-input">
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="sound-toggle">
+              <span class="setting-label">Sound Effects</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="sound-toggle" class="toggle-input" checked>
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="particles-toggle">
+              <span class="setting-label">Particle Effects</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="particles-toggle" class="toggle-input" checked>
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="settings-footer">
+          <p class="settings-info">Settings are saved automatically</p>
+        </div>
+      </div>
+    </div>
     </div>
 
   <script src="js/bind_polyfill.js"></script>
@@ -86,6 +140,9 @@
   <script src="js/grid.js"></script>
   <script src="js/tile.js"></script>
   <script src="js/local_storage_manager.js"></script>
+  <script src="js/settings_manager.js"></script>
+  <script src="js/sound_manager.js"></script>
+  <script src="js/particle_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
 </body>
