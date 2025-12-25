@@ -1032,20 +1032,25 @@ hr {
   .stats-bar {
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    max-width: 280px;
   }
   .moves-container {
-    padding: 8px 15px;
-  }
-  .moves-container .moves-label {
-    font-size: 11px;
+    padding: 6px 10px;
+    flex: 1;
     margin-right: 5px;
   }
+  .moves-container .moves-label {
+    font-size: 10px;
+    margin-right: 4px;
+  }
   .moves-container .moves-count {
-    font-size: 16px;
+    font-size: 14px;
   }
   .settings-button {
-    padding: 8px 12px;
-    font-size: 18px;
+    padding: 6px 10px;
+    font-size: 16px;
+    flex-shrink: 0;
   }
   .game-intro {
     width: 55%;
@@ -1297,6 +1302,32 @@ hr {
   }
   .game-message .lower {
     margin-top: 30px !important;
+  }
+  .settings-panel {
+    width: 95%;
+    max-width: calc(100vw - 40px);
+    margin: 0 20px;
+  }
+  .settings-header {
+    padding: 15px 20px;
+  }
+  .settings-header h2 {
+    font-size: 20px;
+  }
+  .settings-content {
+    padding: 15px 20px;
+  }
+  .setting-item {
+    margin-bottom: 15px;
+  }
+  .setting-item .setting-label {
+    font-size: 14px;
+  }
+  .settings-footer {
+    padding: 12px 20px;
+  }
+  .settings-footer .settings-info {
+    font-size: 11px;
   }
 }
 
