@@ -24,6 +24,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
   window.requestAnimationFrame(function () {
     self.clearContainer(self.tileContainer);
 
+    // Reset flags for this actuate cycle
+    self.moveSoundPlayed = false;
+    self.anyMergeOccurred = false;
+    self.anyTileMoved = false;
+
     grid.cells.forEach(function (column) {
       column.forEach(function (cell) {
         if (cell) {
@@ -31,6 +36,12 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         }
       });
     });
+
+    // Play move sound only if tiles moved without any merges
+    if (self.anyTileMoved && !self.anyMergeOccurred && !self.moveSoundPlayed && self.soundManager) {
+      self.soundManager.playMove();
+      self.moveSoundPlayed = true;
+    }
 
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
@@ -91,9 +102,15 @@ HTMLActuator.prototype.addTile = function (tile) {
       classes[2] = self.positionClass({ x: tile.x, y: tile.y });
       self.applyClasses(wrapper, classes); // Update the position
     });
+
+    // Track that a tile moved
+    self.anyTileMoved = true;
   } else if (tile.mergedFrom) {
     classes.push("tile-merged");
     this.applyClasses(wrapper, classes);
+
+    // Track that a merge occurred
+    self.anyMergeOccurred = true;
 
     // Play merge sound
     if (this.soundManager) {

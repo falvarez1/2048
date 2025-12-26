@@ -43,7 +43,38 @@ SoundManager.prototype.playSound = function (frequency, duration, type) {
 };
 
 SoundManager.prototype.playMove = function () {
-  this.playSound(200, 0.05, 'sine');
+  if (!this.audioContext || !this.settingsManager.isSoundEnabled()) {
+    return;
+  }
+
+  try {
+    var oscillator = this.audioContext.createOscillator();
+    var gainNode = this.audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(this.audioContext.destination);
+
+    oscillator.type = 'sine';
+
+    // Sweep from 350Hz to 280Hz for a satisfying tick sound
+    oscillator.frequency.setValueAtTime(350, this.audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(
+      280,
+      this.audioContext.currentTime + 0.08
+    );
+
+    // Quick fade out
+    gainNode.gain.setValueAtTime(0.15, this.audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.01,
+      this.audioContext.currentTime + 0.08
+    );
+
+    oscillator.start(this.audioContext.currentTime);
+    oscillator.stop(this.audioContext.currentTime + 0.08);
+  } catch (e) {
+    // Ignore audio errors
+  }
 };
 
 SoundManager.prototype.playMerge = function (value) {

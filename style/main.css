@@ -4,7 +4,7 @@
   --text-color: #776E65;
   --bright-text-color: #f9f6f2;
   --game-bg: #bbada0;
-  --grid-cell-bg: rgba(238, 228, 218, 0.35);
+  --grid-cell-bg: rgba(238, 228, 218, 0.55);
   --tile-bg: #eee4da;
   --score-bg: #bbada0;
   --button-bg: #8f7a66;
@@ -18,7 +18,7 @@ body.dark-mode {
   --text-color: #e0e0e0;
   --bright-text-color: #ffffff;
   --game-bg: #2d2d44;
-  --grid-cell-bg: rgba(60, 60, 80, 0.5);
+  --grid-cell-bg: rgba(60, 60, 80, 0.7);
   --tile-bg: #3a3a52;
   --score-bg: #2d2d44;
   --button-bg: #4a4a68;
@@ -1093,9 +1093,9 @@ hr {
     touch-action: none;
     background: var(--game-bg);
     border-radius: 6px;
-    width: 100%;
-    max-width: 100vw;
-    aspect-ratio: 1;
+    width: calc(100vw - 20px);
+    height: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1181,7 +1181,7 @@ hr {
     clear: both;
   }
   .grid-cell {
-    width: calc((100% - 30px) / 4);
+    width: calc((100vw - 66px) / 4);
     height: calc((100vw - 66px) / 4);
     max-width: calc((100vw - 66px) / 4);
     max-height: calc((100vw - 66px) / 4);
