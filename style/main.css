@@ -7,6 +7,8 @@
   --grid-cell-bg: rgba(238, 228, 218, 0.55);
   --tile-bg: #eee4da;
   --score-bg: #bbada0;
+  --score-text-color: #f9f6f2;
+  --score-label-color: #eee4da;
   --button-bg: #8f7a66;
   --settings-overlay-bg: rgba(0, 0, 0, 0.5);
   --settings-panel-bg: #faf8ef;
@@ -21,6 +23,8 @@ body.dark-mode {
   --grid-cell-bg: rgba(60, 60, 80, 0.7);
   --tile-bg: #3a3a52;
   --score-bg: #2d2d44;
+  --score-text-color: #ffffff;
+  --score-label-color: rgba(255, 255, 255, 0.7);
   --button-bg: #4a4a68;
   --settings-overlay-bg: rgba(0, 0, 0, 0.8);
   --settings-panel-bg: #252538;
@@ -108,10 +112,10 @@ h1.title {
   line-height: 47px;
   font-weight: bold;
   border-radius: 3px;
-  color: white;
+  color: var(--score-text-color);
   margin-top: 8px;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .score-container:after, .best-container:after {
   position: absolute;
@@ -122,7 +126,7 @@ h1.title {
   font-size: 13px;
   line-height: 13px;
   text-align: center;
-  color: #eee4da;
+  color: var(--score-label-color);
 }
 .score-container .score-addition, .best-container .score-addition {
   position: absolute;
@@ -166,9 +170,9 @@ h1.title {
   background: var(--score-bg);
   padding: 10px 20px;
   border-radius: 3px;
-  color: white;
+  color: var(--score-text-color);
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .moves-container .moves-label {
   text-transform: uppercase;
