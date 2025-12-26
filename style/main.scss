@@ -50,6 +50,12 @@ body.dark-mode {
   --border-color: #3a3a52;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -59,6 +65,8 @@ html, body {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -784,14 +792,17 @@ hr {
   }
 
   .container {
-    width: $field-width;
+    width: 100%;
+    max-width: $field-width;
     margin: 0 auto;
+    padding: 0;
   }
 
   .score-container, .best-container {
     margin-top: 0;
-    padding: 15px 10px;
+    padding: 10px 8px;
     min-width: 40px;
+    font-size: 18px;
   }
 
   .heading {
@@ -803,13 +814,15 @@ hr {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    max-width: $field-width;
+    padding: 0;
   }
 
   .moves-container {
     padding: 6px 10px;
     flex: 1;
     margin-right: 5px;
+    min-width: 0;
+    overflow: hidden;
 
     .moves-label {
       font-size: 10px;
@@ -825,6 +838,7 @@ hr {
     padding: 6px 10px;
     font-size: 16px;
     flex-shrink: 0;
+    min-width: 0;
   }
 
   // Show intro and restart button side by side
