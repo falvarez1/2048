@@ -67,7 +67,7 @@ h1.title {
   float: left;
 }
 
-@-webkit-keyframes $animation-name {
+@-webkit-keyframes move-up {
   0% {
     top: 25px;
     opacity: 1;
@@ -77,7 +77,7 @@ h1.title {
     opacity: 0;
   }
 }
-@-moz-keyframes $animation-name {
+@-moz-keyframes move-up {
   0% {
     top: 25px;
     opacity: 1;
@@ -87,7 +87,7 @@ h1.title {
     opacity: 0;
   }
 }
-@keyframes $animation-name {
+@keyframes move-up {
   0% {
     top: 25px;
     opacity: 1;
@@ -251,7 +251,7 @@ hr {
   margin: 0 auto;
 }
 
-@-webkit-keyframes $animation-name {
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -259,7 +259,7 @@ hr {
     opacity: 1;
   }
 }
-@-moz-keyframes $animation-name {
+@-moz-keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -267,7 +267,7 @@ hr {
     opacity: 1;
   }
 }
-@keyframes $animation-name {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -615,7 +615,7 @@ hr {
   }
 }
 
-@-webkit-keyframes $animation-name {
+@-webkit-keyframes appear {
   0% {
     opacity: 0;
     -webkit-transform: scale(0);
@@ -631,7 +631,7 @@ hr {
     transform: scale(1);
   }
 }
-@-moz-keyframes $animation-name {
+@-moz-keyframes appear {
   0% {
     opacity: 0;
     -webkit-transform: scale(0);
@@ -647,7 +647,7 @@ hr {
     transform: scale(1);
   }
 }
-@keyframes $animation-name {
+@keyframes appear {
   0% {
     opacity: 0;
     -webkit-transform: scale(0);
@@ -796,7 +796,7 @@ hr {
   margin-top: 50px;
 }
 
-@-webkit-keyframes $animation-name {
+@-webkit-keyframes particle-burst {
   0% {
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1);
@@ -812,7 +812,7 @@ hr {
     transform: translate(var(--tx), var(--ty)) scale(0);
   }
 }
-@-moz-keyframes $animation-name {
+@-moz-keyframes particle-burst {
   0% {
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1);
@@ -828,7 +828,7 @@ hr {
     transform: translate(var(--tx), var(--ty)) scale(0);
   }
 }
-@keyframes $animation-name {
+@keyframes particle-burst {
   0% {
     opacity: 1;
     -webkit-transform: translate(0, 0) scale(1);
