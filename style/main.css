@@ -7,8 +7,8 @@
   --grid-cell-bg: rgba(238, 228, 218, 0.55);
   --tile-bg: #eee4da;
   --score-bg: #bbada0;
-  --score-text-color: #ffffff;
-  --score-label-color: rgba(238, 228, 218, 0.65);
+  --score-text-color: #776E65;
+  --score-label-color: rgba(119, 110, 101, 0.7);
   --button-bg: #8f7a66;
   --settings-overlay-bg: rgba(0, 0, 0, 0.5);
   --settings-panel-bg: #faf8ef;
@@ -797,9 +797,9 @@ hr {
 }
 .tile-merged .tile-inner {
   z-index: 20;
-  -webkit-animation: pop 500ms ease-out 100ms;
-  -moz-animation: pop 500ms ease-out 100ms;
-  animation: pop 500ms ease-out 100ms;
+  -webkit-animation: pop 300ms ease-out 100ms;
+  -moz-animation: pop 300ms ease-out 100ms;
+  animation: pop 300ms ease-out 100ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
