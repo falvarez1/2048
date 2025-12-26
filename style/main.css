@@ -672,7 +672,7 @@ hr {
   animation-fill-mode: backwards;
 }
 
-@-webkit-keyframes $animation-name {
+@-webkit-keyframes pop {
   0% {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -698,7 +698,7 @@ hr {
     transform: scale(1);
   }
 }
-@-moz-keyframes $animation-name {
+@-moz-keyframes pop {
   0% {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -724,7 +724,7 @@ hr {
     transform: scale(1);
   }
 }
-@keyframes $animation-name {
+@keyframes pop {
   0% {
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
